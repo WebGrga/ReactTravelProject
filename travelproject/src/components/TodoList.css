@@ -1,0 +1,12 @@
+.todoListDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FBDDD2;
+    height: 70vh;
+}
+
+.todoItems {
+    list-style: none;
+}
