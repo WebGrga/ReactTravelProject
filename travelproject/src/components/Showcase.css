@@ -1,0 +1,102 @@
+.showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.gallery-showcase {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    /* in case content is too wide */
+}
+
+.showcase-content {
+    width: 90vw;
+    /* Space around content */
+    text-align: center;
+    /* Centering text content */
+}
+
+.leftBtn {
+    position: absolute;
+    top: 40%;
+    left: 0%;
+}
+
+.rightBtn {
+    position: absolute;
+    top: 40%;
+    right: 0%;
+}
+
+.content-div {
+    width: 100%;
+    height: 30vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+}
+
+.gallery-showcase button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.gAbout {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background-color: #0000008a;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    color: #ccc;
+}
+
+.gAbout h2 {
+    padding-left: 15px;
+}
+
+.gAbout button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #737373ad;
+    border-color: #00000000;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.gAbout button img {
+    width: 25px;
+    height: 25px;
+}
+
+.showcaseInformation {
+    position: relative;
+
+}
+
+.showcase-content {
+    position: relative;
+    /* Ensures it provides a stacking context */
+    z-index: 0;
+    /* Default stacking level */
+}
+
+.leaflet-container {
+    z-index: 1;
+    /* Ensure map does not overlap modal/dialog components */
+}

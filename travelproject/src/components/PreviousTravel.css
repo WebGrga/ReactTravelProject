@@ -1,0 +1,56 @@
+/* Container for the entire card */
+.card-container {
+    perspective: 1000px;
+    height: 200px;
+    width: 300px;
+    position: relative;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* The actual card that flips */
+.card-flip {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card-container:hover .card-flip {
+    transform: rotateY(180deg);
+}
+
+/* Front and back styling */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    /* Hide the back side when facing away */
+}
+
+.card-front {
+    z-index: 2;
+    /* front should have slight advantage in stacking context */
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    /* Rotate the back */
+    background: #f8f8f8;
+    /* Light background for readability */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #333;
+}
+
+/* Image covers the entire front side */
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

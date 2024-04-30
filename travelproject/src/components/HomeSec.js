@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import './HomeSec.css';
-
+import avatar from '../images/Profile1.png';
+import save from '../images/Bookmark.png';
 function HomeSec() {
 
 
     return (
         <div className='userDiv'>
-            <button>User</button>
+            <button><img src={avatar} alt='avatar'></img></button>
             <h3>Welcome</h3>
-            <button>Save</button>
+            <button><img src={save} alt='save'></img></button>
         </div>
     );
 }
