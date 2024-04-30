@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './TodoList.css';
 
-function TodoList() {
+function TodoList({ isVisible }) {
     const [todos, setTodos] = useState([]);
     const [task, setTask] = useState("");
 
@@ -28,6 +28,10 @@ function TodoList() {
         setTodos(newTodos);
     };
 
+    if (!isVisible) {
+        return null; // Do not render if not visible
+    }
+
     return (
         <div className='todoListDiv'>
             <input
@@ -37,16 +41,19 @@ function TodoList() {
                 placeholder="Add a new task"
             />
             <button onClick={addTask}>Add Task</button>
-            <ul>
+            <ul className='todoUl'>
                 {todos.map((todo, index) => (
                     <li className='todoItems' key={index} style={{ textDecoration: todo.isCompleted ? 'line-through' : 'none' }}>
-                        <input
-                            type="checkbox"
-                            checked={todo.isCompleted}
-                            onChange={() => toggleCompletion(index)}
-                        />
+                        <label className="round-checkbox">
+                            <input
+                                type="checkbox"
+                                checked={todo.isCompleted}
+                                onChange={() => toggleCompletion(index)}
+                            />
+                            <span className="checkmark"></span>
+                        </label>
                         {todo.text}
-                        <button onClick={() => removeTask(index)}>Remove</button>
+                        <button className="removeButton" onClick={() => removeTask(index)}>X</button>
                     </li>
                 ))}
             </ul>

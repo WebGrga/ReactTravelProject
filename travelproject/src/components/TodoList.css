@@ -1,12 +1,99 @@
 .todoListDiv {
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #FBDDD2;
-    height: 70vh;
+    height: 79vh;
+    width: 100%;
+    border-radius: 25px 25px 0 0;
+}
+
+.todoUl {
+    width: 80%;
+    margin-inline-start: 0;
+    padding-inline-start: 0;
 }
 
 .todoItems {
     list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    margin-bottom: 10px;
+    width: 80%;
+}
+
+
+
+.round-checkbox {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.round-checkbox input[type="checkbox"] {
+    visibility: hidden;
+    position: absolute;
+}
+
+.round-checkbox .checkmark {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+    border: 1px solid #000000;
+}
+
+.round-checkbox input[type="checkbox"]:checked+.checkmark {
+    background-color: #2196F3;
+}
+
+.round-checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.round-checkbox input[type="checkbox"]:checked+.checkmark:after {
+    display: block;
+    margin-left: 6px;
+    margin-top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.removeButton {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.removeButton:focus {
+    outline: none;
+}
+
+.removeButton:hover {
+    background-color: darkred;
 }
